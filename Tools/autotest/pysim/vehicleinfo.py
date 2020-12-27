@@ -89,6 +89,17 @@ class VehicleInfo(object):
                 "waf_target": "bin/arducopter",
                 "default_params_filename": "default_params/copter.parm",
             },
+            "deca": {
+                "make_target": "sitl",
+                "waf_target": "bin/arducopter",
+                "default_params_filename": ["default_params/copter.parm",
+                                            "default_params/copter-deca.parm" ],
+            },
+            "deca-cwx": {
+                "make_target": "sitl",
+                "waf_target": "bin/arducopter",
+                "default_params_filename": "default_params/copter.parm",
+            },
             "tri": {
                 "make_target": "sitl",
                 "waf_target": "bin/arducopter",
@@ -157,6 +168,13 @@ class VehicleInfo(object):
             "calibration": {
                 "extra_mavlink_cmds": "module load sitl_calibration;",
             },
+            "Callisto": {
+                "model": "octa-quad:@ROMFS/models/Callisto.json",
+                "make_target": "sitl",
+                "waf_target": "bin/arducopter",
+                "default_params_filename": ["default_params/copter.parm",
+                                            "models/Callisto.param"],
+            },
         },
     },
     "ArduPlane": {
@@ -220,6 +238,10 @@ class VehicleInfo(object):
                 "waf_target": "bin/arduplane",
                 "default_params_filename": ["default_params/plane.parm", "default_params/plane-dspoilers.parm"]
             },
+            "plane-soaring": {
+                "waf_target": "bin/arduplane",
+                "default_params_filename": ["default_params/plane.parm", "default_params/plane-soaring.parm"]
+            },
             "gazebo-zephyr": {
                 "waf_target": "bin/arduplane",
                 "default_params_filename": "default_params/gazebo-zephyr.parm",
@@ -244,7 +266,7 @@ class VehicleInfo(object):
             },
         },
     },
-    "APMrover2": {
+    "Rover": {
         "default_frame": "rover",
         "frames": {
             # ROVER
